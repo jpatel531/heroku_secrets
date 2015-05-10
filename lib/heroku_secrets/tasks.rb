@@ -5,8 +5,8 @@ module HerokuSecrets
     class Heroku < Struct.new(:app)
       def invoke
         # Rails.env = environment || 'production'
-        account, app = ENV["H_ACCOUNT"], ENV["H_APP"]
-        output = heroku("config:set #{vars} --account #{account} --app #{app}")
+        # account, app = ENV["H_ACCOUNT"], ENV["H_APP"]
+        output = heroku("config:set #{vars} --account jamie --app pusher-rethink")
 
         puts output.split("\n").first
       end
